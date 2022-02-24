@@ -24,18 +24,18 @@ const urlFolder = './urls';
 //             urls.push(item.data.url);
 //         });
 //         console.log(titles);
-//         
-//         Create Folder
+        
+//         // Create Folder
 //         fs.mkdir(path.join(__dirname, '/urls'), {}, function(error) {
-//          if(error) throw error;
-//          console.log('Folder created');
-//          })
+//             if(error) throw error;
+//             console.log('Folder created');
+//         })
 
-//          // Create and Write to File
-//          fs.writeFile(path.join(__dirname, '/urls', 'url_list.log'), JSON.stringify(urls), function(error) {
-//          if(error) throw error;
-//          console.log('File created');
-//          });
+//         // Create and Write to File
+//         fs.writeFile(path.join(__dirname, '/urls', 'url_list.log'), JSON.stringify(urls), function(error) {
+//             if(error) throw error;
+//             console.log('File created');
+//         });
 
 //         if(fs.existsSync(urlFolder)) {
 //             fs.rmdirSync(urlFolder, {recursive: true})
@@ -54,9 +54,10 @@ const urlFolder = './urls';
 //         }
 //     });    
 
-// }).on('error', (err) => {
-//     console.log('Error: ' + err.message);
+//     }).on('error', (err) => {
+//         console.log('Error: ' + err.message);
 // });
+
 
 // NODE SCRIPT with AXIOS
 const axios = require('axios');
@@ -64,10 +65,7 @@ const axios = require('axios');
 axios
     .get(urlEndpoint)
     .then(res => {
-        // console.log(`statusCode: ${res.status}`)       
-        // console.log(res.data.data.children)
         const totalData = res.data.data.children;
-        // console.log(totalData);
         totalData.forEach((item) => {
             titles.push(item.data.title);
             urls.push(item.data.url);
