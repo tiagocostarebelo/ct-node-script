@@ -25,7 +25,18 @@ https.get('https://www.reddit.com/r/aww.json', (resp) => {
         // console.log(urls);
 
         if(fs.existsSync(urlFolder)) {
-            fs.rmdirSync(urlFolder, {recursive: true})
+            fs.rmdirSync(urlFolder, {recursive: true});
+             // Create Folder
+             fs.mkdir(path.join(__dirname, '/urls'), {}, function(error) {
+                if(error) throw error;
+                console.log('Folder created');
+            })
+
+            // Create and Write to File
+            fs.writeFile(path.join(__dirname, '/urls', 'url_list.log'), JSON.stringify(urls), function(error) {
+                if(error) throw error;
+                console.log('File created');
+            });
         } else {
             // Create Folder
             fs.mkdir(path.join(__dirname, '/urls'), {}, function(error) {
