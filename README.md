@@ -11,9 +11,9 @@ Create a node script which, when executed, reads from the reddit endpoint https:
 - Open the folder in your Code Editor of preference
 - cd over to the respective folder in your terminal
 - use npm to install the dependencies and devDependencies required and start the server
-```sh
+```
 npm i
-npm app
+npm run start
 ```
 
 - The magic happens in the terminal and in your folder. Enjoy.
